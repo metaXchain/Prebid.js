@@ -42,18 +42,6 @@ document.write('<script'+' src="'+encodeURI(u)+'"><'+'/script>');
 
     var pbjs = pbjs || {};
     pbjs.que = pbjs.que || [];
-    pbjs.bidderSettings = {
-      standard: {
-        adserverTargeting: [
-          {
-            key: "hb_pb",
-            val: function (bidResponse) {
-              return '12.00';
-            }
-          }
-        ]
-      }
-    };
 
     var date = new Date().getTime();
 
