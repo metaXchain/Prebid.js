@@ -1,0 +1,15 @@
+[
+    "appnexus",
+    "appnexusAst",
+    "metaxchain",
+    {
+      "appnexusAst": {
+        "supportedMediaTypes": ["video"]
+      }
+    },
+    {
+      "metaxchain": {
+        "supportedMediaTypes": ["video"]
+      }
+    }
+]
