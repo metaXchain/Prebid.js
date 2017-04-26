@@ -176,7 +176,7 @@ function MetaXchainAdapter() {
         if (seatbidBid.adm) {
           /*var blob = new Blob([decodeURIComponent(seatbidBid.adm)], {type : 'text/xml'});
           nurl = URL.createObjectURL(blob);*/
-          nurl = `http://hollywoodwire.tv/vast.php?vast=` + encodeURIComponent(seatbidBid.adm);
+          nurl = `https://hollywoodwire.tv/vast.php?vast=` + encodeURIComponent(seatbidBid.adm);
           if (seatbidBid.nurl) {
             // fire win notification
             let winTrack = new Image();
