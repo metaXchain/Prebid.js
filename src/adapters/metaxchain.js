@@ -5,7 +5,7 @@ import * as utils from 'src/utils';
 import { ajax } from 'src/ajax';
 import { STATUS } from 'src/constants';
 
-let ENDPOINT = 'https://vidroll-rtb-server-staging-2.azurewebsites.net/proxy';
+let ENDPOINT = '//proxy-ad-server.adchain.com/proxy';
 
 /**
  * Bidder adapter for /ut endpoint. Given the list of all ad unit tag IDs,
@@ -135,9 +135,9 @@ function MetaXchainAdapter() {
 
       console.log(ENDPOINT);
       ajax(ENDPOINT, handleResponse, payload, {
-        contentType: 'application/json',
+        contentType: 'text/plain',
         // TODO update to true
-        withCredentials : false
+        withCredentials : true
       });
     }
   };
@@ -176,7 +176,8 @@ function MetaXchainAdapter() {
         if (seatbidBid.adm) {
           /*var blob = new Blob([decodeURIComponent(seatbidBid.adm)], {type : 'text/xml'});
           nurl = URL.createObjectURL(blob);*/
-          nurl = `https://hollywoodwire.tv/vast.php?vast=` + encodeURIComponent(seatbidBid.adm);
+          let protocol = (document.location.protocol === 'https:') ? 'https:' : 'http:';
+          nurl = protocol + `//proxy-ad-server.adchain.com/vast?vast=` + encodeURIComponent(seatbidBid.adm);
           if (seatbidBid.nurl) {
             // fire win notification
             let winTrack = new Image();
