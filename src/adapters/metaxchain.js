@@ -5,7 +5,7 @@ import * as utils from 'src/utils';
 import { ajax } from 'src/ajax';
 import { STATUS } from 'src/constants';
 
-let ENDPOINT = '//proxy-ad-server.adchain.com/proxy';
+let ENDPOINT = '//proxy-rtb-bidder.adchain.com/proxy';
 
 /**
  * Bidder adapter for /ut endpoint. Given the list of all ad unit tag IDs,
