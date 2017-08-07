@@ -100,6 +100,7 @@ function MetaXchainAdapter() {
     const bids = bidRequest.bids || [];
     var member = 0;
     let userObj;
+    const ac_uid = window.AC_UID || '';
     console.log(`callBids`, bids);
     const imps = bids
       .filter(bid => valid(bid))
@@ -133,8 +134,8 @@ function MetaXchainAdapter() {
         ENDPOINT = 'http://localhost:5153/proxy';
       }
 
-      console.log(ENDPOINT);
-      ajax(ENDPOINT, handleResponse, payload, {
+      const bidderEndpoint = ENDPOINT + "?ac_uid=" + ac_uid;
+      ajax(bidderEndpoint, handleResponse, payload, {
         contentType: 'text/plain',
         // TODO update to true
         withCredentials : true
